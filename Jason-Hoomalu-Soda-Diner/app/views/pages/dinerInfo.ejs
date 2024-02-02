@@ -1,0 +1,52 @@
+<%- include('../partials/head') %>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <section>
+        <div class="info-box text-white my-3">
+            <h3 class="list-info success text-center" id="newDiner"></h3>
+            <h3 class="list-info"><%= data.name %></h3>
+            <h3 class="list-info"><%= data.location %></h3>
+        </div>
+        <div class="info-box info-served text-white text-center">
+            <h3 class="feedback success my-2"></h3>
+            <h3 class="list-info text-center">Sodas Served</h3>
+            <hr>
+            <% if (available.length === 0) {%>
+            <h4>This diner is not currently serving any sodas.</h4>
+            <p>Click Add Soda to begin serving sodas.</p>
+            <% }%>
+            <% available.forEach((e,i) => { %>
+            <a class="btn" href="#modal-edit" data-bs-toggle="modal" role="button">
+                <p class="set-soda list-tag list-remove list-diner"><%=e%></p>
+            </a>
+            <hr>
+            <%})%>
+        </div>
+        <div>
+            <a href="/diners-sodas/<%= data._id %>"><button id="add-soda" class="btn btn-primary list-btn my-1">Add
+                    Soda</button></a>
+        </div>
+        <div>
+            <a href="/diners-edit/<%= data._id %>"><button id="edit-diner" class="btn btn-primary list-btn my-1">Edit
+                    This Diner</button></a>
+        </div>
+        <div>
+            <button data-id="<%= data._id %>" class="btn btn-danger list-btn my-1" data-bs-toggle="modal"
+                data-bs-target=".modal">Remove
+                This Diner</button>
+        </div>
+        <div>
+            <a href="/diners"><button class="btn btn-danger list-btn my-1">Go Back</button></a>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <%- include('../partials/modal') %>
+        <%- include('../partials/modal-edit') %>
+    </section>
+
+    <%- include('../partials/footer') %>

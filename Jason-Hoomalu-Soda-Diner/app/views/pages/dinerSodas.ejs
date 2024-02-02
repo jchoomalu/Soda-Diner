@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <section class="text-white">
+        <div class="info-box my-3 text-center">
+            <h1>Add Sodas To Your Favorite Diner</h1>
+        </div>
+        <div class="info-box text-center info-served my-1 p-3">
+            <h5>Select <span class="fizz">ALL</span> the <span class="fizz">Fizzy</span> sodas you have heard the
+                <span class="buzz">Buzz</span> about and would like to see served at this diner.</h5>
+            <% if(sodasUnavailable.length === 0) { %>
+            <h3 class="my-2 p-2"> This diner already serves all of the available sodas.</h3>
+            <%} else { %>
+            <% sodasUnavailable.forEach((e,i) => { %>
+            <input type="checkbox" data-id="<%=sodasId[i]._id%>" class="btn-check" id="btncheck<%=i%>">
+            <label class="btn btn-outline-light checkbox-btn my-2" for="btncheck<%=i%>"><%= e %></label>
+            <% }) %>
+            <% } %>
+        </div>
+        <button id="addSodasBtn" class="btn btn-primary list-btn">Add Sodas</button>
+    </section>
+
+
+    <%- include('../partials/footer') %>

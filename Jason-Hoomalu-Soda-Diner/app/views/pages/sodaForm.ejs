@@ -1,0 +1,33 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main class="text-white">
+        <div class="info-box my-3 text-center">
+            <h1>Add A Soda</h1>
+            <p>Know of a delicious soda that you would like to share with friends? Add the details here.</p>
+        </div>
+        <div class="info-box my-3">
+            <h3 class="text-center p-2 warning"><%= existsError %></h3>
+            <form id="add-soda" method="POST">
+                <div class="form-group my-2">
+                    <label for="sodaName">Soda Name:</label>
+                    <input type="text" name="name" class="form-control" id="sodaName" placeholder="Soda name...">
+                </div>
+                <div class="form-group my-2">
+                    <label for="sodaFizziness">Fizziness:</label>
+                    <input type="number" name="fizziness" class="form-control" id="sodaFizziness"
+                        placeholder="Soda fizziness...">
+                </div>
+                <div class="form-group my-2">
+                    <label for="sodaRating">Soda Rating:</label>
+                    <input type="number" name="rating" class="form-control" id="sodaRating"
+                        placeholder="Taste rating...">
+                </div>
+                <button id="soda-submit" type="submit" class="btn btn-primary soda-form-btn my-3">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <%- include('../partials/footer') %>

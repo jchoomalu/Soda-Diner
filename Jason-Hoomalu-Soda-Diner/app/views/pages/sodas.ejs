@@ -1,0 +1,21 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <main>
+        <div class="info-box text-white info-served mt-5">
+            <h3 class="my-1 text-center">Please select a soda for more information</h3>
+            <hr>
+            <% data.forEach((e, i) => { %>
+            <a class="list-tag" href="sodas/<%=e._id%>">
+                <p data-new-soda="<%=e.justAdded%>" data-updated-sodas="<%=e.justUpdated %>" class="list-tag-name">
+                    <%=e.name%></p>
+                <% }) %>
+            </a>
+            <hr>
+        </div>
+        <a href="/sodas-new"><button class="btn btn-primary my-3 list-btn">Add New Soda</button></a>
+    </main>
+
+    <%- include('../partials/footer') %>

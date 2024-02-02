@@ -1,0 +1,134 @@
+/* GLOBAL STYLES */
+body { 
+  background-image: url(../images/halfTable.png);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* HEADER / NAV STYLES */
+#logo {
+    height: 100px;
+}
+
+.navbar {
+    color: white;
+}
+
+.top a {
+    font-size: 1.25em;
+    color: white;
+    display: inline;
+}
+
+.top a:hover {
+    text-decoration: underline;
+    color: rgb(213, 53, 24)
+}
+
+.top {
+    margin: auto;
+}
+
+/* Main div for all pages */
+.info-box {
+    background-color: rgb(40,41,45,.4);
+    border: 5px double #909090;
+    border-radius: 15px;
+    width: 700px;
+    margin-left: 5%;
+}
+
+.list-info {
+    margin: 15px;
+}
+
+.list-tag {
+    font-size: 1.25em;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
+
+.list-diner {
+    margin: -8px;
+}
+
+.list-btn {
+    width: 600px;
+    margin-left: 8%;
+}
+
+.list-remove:hover {
+    cursor: pointer;
+    color: #0d5efd;
+}
+
+/* added when new or updated */
+.badge {
+    margin-left: 12px;
+    box-shadow: 0px 2px 8px white;
+}
+
+/* HOME PAGE STYLES */
+.welcome {
+    width: 700px;
+    margin: 60px;
+}
+
+.fizz {
+    color: rgb(213, 53, 24);
+    font-family: fantasy;
+}
+.buzz {
+    color: rgb(47, 117, 21);
+    font-family: fantasy;
+}
+
+.warning {
+    color: red;
+}
+
+.success {
+    color: limegreen;
+}
+
+/* **********************************START SODA PAGES******************************* */
+
+/* SODAS STYLES */
+
+.soda-form-btn {
+    width: 600px;
+    margin-left: 2%;
+}
+
+/* SODA FORM STYLES */
+
+form {
+    margin-left: 5%;
+    width: 90%;
+}
+
+/* **********************************START DINER PAGES******************************* */
+
+/* DINERS STYLES */
+
+.checkbox-btn {
+    width: 60%;
+}
+.checkbox-btn:hover {
+    box-shadow: 0px 0px 10px white;
+}
+
+.inner-info {
+    background-color: rgb(40,41,45,.4);
+    border: 5px double #909090;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+}
+
+.info-served {
+    max-height: 380px;
+    overflow-y: scroll;
+}
+

@@ -1,0 +1,31 @@
+<%- include('../partials/head') %>
+
+<body>
+
+  <%- include('../partials/header') %>
+
+  <section>
+    <div class="info-box text-white my-3">
+      <h2 class="text-center">Soda Details:</h2>
+      <h3 class="list-info">Name: <%= data.name %></h3>
+      <h3 class="list-info">Fizziness: <%= data.fizziness %></h3>
+      <h3 class="list-info">Rating: <%= data.rating %></h3>
+    </div>
+
+    <div class="info-box text-white">
+      <p class="my-1 p-1 fs-4 text-center">Please enter the updated information for this soda:</p>
+      <form method="POST">
+        <label for="name">Name:</label>
+        <input class="form-control my-2" type="text" value="<%=data.name%>" name="name" placeholder="New name..." required>
+        <label for="fizziness">Fizziness:</label>
+        <input class="form-control my-2" type="number" value="<%=data.fizziness%>" name="fizziness" placeholder="New fizziness..." required>
+        <label for="rating">Rating:</label>
+        <input class="form-control my-2" type="number" value="<%=data.rating%>" name="rating" placeholder="New rating..." required>
+        <button class="btn btn-primary my-2" type="submit">Update Soda</button>
+      </form>
+    </div>
+
+  </section>
+
+
+  <%- include('../partials/footer') %>

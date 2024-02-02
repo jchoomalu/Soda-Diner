@@ -1,0 +1,41 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+    <section>
+        <div class="info-box text-white my-3">
+            <h3 class="list-info success text-center" id="newSoda"></h3>
+            <h1 class="list-info"><%= data.name %></h1>
+            <h3 class="list-info">Fizziness: <%= data.fizziness %> </h3>
+            <h3 class="list-info">Rating: <%= data.rating %> </h3>
+            <h3 class="list-info available">Currently Available: <%=data.available%></h3>
+            <div>
+                <% if (data.available === true) { %>
+                <button data-id="<%= data._id %>" class="btn btn-primary service list-btn my-1">Stop Serving
+                    This Soda</button></a>
+                <% } else { %>
+                <button data-id="<%= data._id %>" class="btn service btn-primary list-btn my-1">Start Serving
+                    This Soda</button></a>
+                <%}%>
+            </div>
+            <div>
+                <a href="/sodas-edit/<%= data._id %>"><button id="edit-soda" class="btn btn-primary list-btn my-1">Edit
+                    This Soda</button></a>
+            </div>
+            <div>
+                <button data-id="<%= data._id %>" class="btn btn-danger list-btn my-1" data-bs-toggle="modal"
+                    data-bs-target=".modal">Remove Soda</button>
+            </div>
+            <div>
+                <a href="/sodas/"><button class="btn btn-danger list-btn my-1">Go Back</button></a>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <%- include('../partials/modal') %>
+    </section>
+
+    <%- include('../partials/footer') %>

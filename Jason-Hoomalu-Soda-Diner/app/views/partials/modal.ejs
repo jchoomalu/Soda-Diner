@@ -1,0 +1,19 @@
+<!-- DELETE SODA OR DINER FROM MONGO DB -->
+<div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">What's the<span class="buzz"> BUZZ?</span></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you would like to delete this permanantly?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#"><button type="button" class="btn btn-secondary redirect-modal"
+            data-bs-dismiss="modal">Close</button></a>
+        <button id="remove-item" data-id="<%= data._id %>" type="button" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

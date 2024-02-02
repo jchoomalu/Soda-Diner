@@ -1,0 +1,43 @@
+<%- include('../partials/head') %>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <main class="text-white">
+        <div class="info-box my-3 text-center">
+            <h1>Add A Diner</h1>
+            <p>Tell us about a <span class="fizz">Fizzy </span>little spot near you! We'll put out the <span
+                    class="buzz">Buzz</span> and
+                make the place a local hit.</p>
+        </div>
+        <div class="info-box my-3">
+            <h3 class="text-center p-2 warning"><%= existsError %></h3>
+            <form id="add-diner" method="POST">
+                <div class="form-group my-2">
+                    <label for="dinerName">Diner Name:</label>
+                    <input type="text" name="name" class="form-control" id="dinerName" placeholder="Diner name...">
+                </div>
+                <div class="form-group my-2">
+                    <label for="dinerLocation">Location:</label>
+                    <input type="text" name="location" class="form-control" id="dinerLocation"
+                        placeholder="Diner location...">
+                </div>
+                <div class="form-inline align-items-center">
+                    <div class="col-auto my-2">
+                        <label class="mr-sm-2 sr-only" for="dinerSodas">What's the <span class="fizz">Fizzy</span>
+                            specialty at this diner?</label>
+                        <select name="sodas" class="form-select mr-sm-2" id="dinerSodas">
+                            <option placeholder="options..."></option>
+                            <% data.forEach((e,i) => { %>
+                            <option value="<%=e.name%>"><%=e.name%></option>
+                            <%})%>
+                        </select>
+                    </div>
+                    <button id="diner-submit" type="submit" class="btn btn-primary soda-form-btn my-3">Submit</button>
+            </form>
+        </div>
+    </main>
+
+
+    <%- include('../partials/footer') %>
